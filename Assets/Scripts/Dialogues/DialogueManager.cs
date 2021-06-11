@@ -11,11 +11,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] Text DialogueText;
     [SerializeField] Animator Animator;
     [SerializeField] Image Image;
+    [SerializeField] float CharacterTypingPeriod;
     AudioSource m_Sound;
     Queue<string> m_Sentences;
-
-    private static DialogueManager m_Instance;
-    public static DialogueManager Instance { get { return m_Instance; } }
 
     #region Events subscrive
     public void SubscribeEvents()
@@ -46,19 +44,6 @@ public class DialogueManager : MonoBehaviour
     }
 
     #endregion
-
-    private void Awake()
-    {
-        // On n'autorise qu'une seule instance de Game Manager
-        if (m_Instance) Destroy(gameObject);
-        else
-        {
-            m_Instance = this;
-
-            // On définit cette instance comme persistante
-            DontDestroyOnLoad(gameObject);
-        }
-    }
 
     void Start()
     {
@@ -130,10 +115,8 @@ public class DialogueManager : MonoBehaviour
             // On rajoute la lettre
             DialogueText.text += letter;
             // On attend 10 frames avant d'afficher la prochaine lettre
-            for (int i = 0; i < 10; i++)
-            {
-                yield return 0;
-            }
+
+            yield return new WaitForSeconds(CharacterTypingPeriod);
         }
         // On coupe le son à la fin de la phrase
         m_Sound.Stop();
