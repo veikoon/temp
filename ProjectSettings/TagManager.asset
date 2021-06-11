@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Player2D
+  - LevelController
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - PortalRings
+  - GroundLayer
+  - TreeLayer
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: BG
+    uniqueID: 1767473937
+    locked: 0
+  - name: BGBuildings
+    uniqueID: 3768377835
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 1000375877
+    locked: 0
+  - name: Platforms
+    uniqueID: 2746225061
+    locked: 0
+  - name: Tiles
+    uniqueID: 773008231
+    locked: 0
+  - name: Player
+    uniqueID: 2239260309
+    locked: 0
